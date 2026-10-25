@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nebula Arena — prototipo 3D</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="game"></div>
+  <div class="topbar">
+    <div class="brand"><span class="logo">✦</span><div><strong>NEBULA ARENA</strong><small>ARENA DE EXPLORACIÓN</small></div></div>
+    <div class="online"><i></i><span id="connection">Conectando…</span></div>
+  </div>
+  <div class="hud">
+    <section class="card objective"><span class="label">OBJETIVO</span><b>Explora la nebulosa</b><small>Muévete, salta y envía señales</small></section>
+    <section class="card score"><span class="label">JUGADORES EN ARENA</span><b id="playerCount">1</b><small id="fragCount">SEÑALES: 0</small></section>
+  </div>
+  
+  <div id="toast" class="toast">Pulsa JUGAR para entrar en la arena</div>
+  <div id="startScreen" class="overlay">
+    <div class="panel">
+      <div class="eyebrow">TEMPORADA CERO · BETA</div>
+      <h1>ENTRA EN<br><em>LA NEBULOSA.</em></h1>
+      <p>Una arena 3D para explorar con otras personas en tiempo real. ¡Recorre la nebulosa y envía señales!</p>
+      <label for="playerName">NOMBRE DE JUGADOR</label>
+      <input id="playerName" maxlength="16" value="Explorador" autocomplete="nickname">
+      <button id="playBtn">JUGAR AHORA <span>→</span></button>
+      <div class="controls"><span><kbd>W A S D</kbd> MOVERSE</span><span><kbd>RATÓN</kbd> MIRAR</span><span><kbd>CLIC</kbd> ENVIAR SEÑAL</span><span><kbd>ESPACIO</kbd> SALTAR</span></div>
+      <small class="note">Prototipo experimental · Mejor con ordenador y ratón</small>
+    </div>
+  </div>
+  <div class="bottom-hint">WASD <span>·</span> CLIC PARA ENVIAR UNA SEÑAL <span>·</span> ESC PARA LIBERAR EL RATÓN</div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="module" src="/game.js"></script>
+</body>
+</html>
